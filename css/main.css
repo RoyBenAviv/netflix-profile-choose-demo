@@ -1,0 +1,279 @@
+@font-face {
+    font-family: netflix-light;
+    src: url('../fonts/NetflixSansRegular.ttf');
+}
+
+@font-face {
+    font-family: netflix-bold;
+    src: url('../fonts/NetflixSansBold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+
+body{ 
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: netflix-light;
+}
+
+p {
+    color: #9e9d9d;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+
+.logo .netflix-logo {
+    width: 150px;
+    margin: 50px
+}
+
+.whos-watching {
+    display: flex;
+    justify-content: center;
+    font-size: 55px;
+    letter-spacing: 0px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.profile-avatars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+}
+
+.profile-avatars ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 35px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user img {
+    cursor: pointer;
+    border: 4px solid; 
+    border-color: transparent;
+    transition: border-color 0.5s;
+}
+
+.user img:hover {
+    border-color: white;
+}
+
+.user img:hover ~ p {
+    color: white;
+}
+
+.add-user {
+    width: 208px;
+    height: 281px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.add-user img{
+    width: 100px;
+}
+
+.add-user p {
+    position: relative;
+    top: 46px;
+
+}
+
+.manage-profiles, .cancel {
+    display: flex;
+    margin: 20px auto;
+    cursor: pointer;
+    background-color: transparent;
+    color: #616161;
+    border: 1px solid #616161;
+    font-family: netflix-light;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-top: 40px;
+}
+
+
+
+.add-user-container {
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.add-user-container h1, .add-user-container p{
+    align-self: stretch;
+}
+
+.add-user-container p {
+    margin-bottom: 5px;
+    color: #616161;    
+}
+
+.add-user-container h1 {
+    font-size: 55px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: #616161;
+    border: none;
+}
+
+.user-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.user-input img {
+    width: 120px;
+}
+
+.user-input input[type=text] {
+    width: 300px;
+    height: 35px;
+    background-color: #616161;
+    border: none;
+    color: white;
+    font-family: netflix-light;
+    font-size: 20px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.buttons {
+ align-self: stretch;
+
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox > div {
+    display: flex;
+}
+
+.checkbox > div >* {
+    margin: 10px;
+}
+
+.continue {
+    cursor: pointer;
+    background-color: #e20813;
+    border: none;
+    font-family: netflix-bold;
+    padding: 10px 20px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-top: 40px;
+    color: white;
+    width: 160px;
+}
+
+
+.cancel {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 30px;
+    width: 45%;
+    height: 400px;
+    color: white;
+    font-weight: bold;
+    border: 4px solid #f1f1f1;
+    z-index: 2;
+    text-align: center;
+    overflow: hidden;
+}
+
+.modal .bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    object-fit: cover;
+    filter: blur(5px) grayscale(20%);
+    /* filter: grayscale(100%); */
+}
+
+.modal .img-modal {
+    border: 4px solid white;
+}
+
+.modal .modal-content {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+
+.modal .cancel {
+    margin: 0
+}
+
+.remove {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 19;
+    overflow: hidden;
+    width: 209px;
+    height: 215px;
+    background-color: black;
+    opacity: 0.8;
+    top: 40%;
+    margin-left: 0;
+}
+
+
+.remove img {
+    width: 100px;
+    
+}
+
