@@ -1,26 +1,26 @@
 export default {
     template: `
        <section class="who-watch">
-   <div class="logo"><img class="netflix-logo" src="../netflix-images/logo.png"></div>
+   <div class="logo"><img class="netflix-logo" src="netflix-images/logo.png"></div>
    <div v-bind:style="{display: isActive ? 'none' : 'block'}" style="height: 100vh; margin-top: 100px">
       <h1 class="whos-watching">Who's watching?</h1>
       <div class="profile-avatars">
          <ul>
             <li v-for="currUser in users">
                <div v-on:click="openModal(currUser.id)" class="user">
-                  <img v-bind:src="'../netflix-images/' + currUser.url" /> 
+                  <img v-bind:src="'netflix-images/' + currUser.url" /> 
                   <p>{{currUser.name}}</p>
                </div>
-               <div v-bind:style="{display: showManage ? 'flex' : 'none'}" class="remove" v-on:click="removeUser(currUser.id)"><img src="../netflix-images/delete.png"></div>
+               <div v-bind:style="{display: showManage ? 'flex' : 'none'}" class="remove" v-on:click="removeUser(currUser.id)"><img src="netflix-images/delete.png"></div>
             </li>
             <div v-on:click="checkUsers"  class="add-user">
-               <img class="plus" src="../netflix-images/plus.png">
+               <img class="plus" src="netflix-images/plus.png">
                <p>Add Profile</p>
             </div>
          </ul>
       </div>
       <div v-bind:style="{display: showModal ? 'block' : 'none'}" class="modal">
-                  <img class="bg" src="/netflix-images/background.jpg">
+                  <img class="bg" src="netflix-images/background.jpg">
                   <div class="modal-content">
                   <img class="img-modal">
                   <h1>User: <span class="name-modal"></span></h1>
@@ -35,7 +35,7 @@ export default {
       <p>Add a profile for another person watching Netflix.</p>
       <hr>
       <div class="user-input">
-         <img src="../netflix-images/5.png"/> <input type="text"> 
+         <img src="netflix-images/5.png"/> <input type="text"> 
          <div class="checkbox">
             <span>Favorite Shows?</span>
             <div><label for="got">Game of Thrones</label> <input type="checkbox" id="got" value="Game of Thrones" v-model="favShows"></div>
@@ -90,7 +90,7 @@ export default {
             this.showModal = true
             const user = this.users.find(user => user.id === id)
             document.querySelector(".name-modal").innerText = user.name
-            document.querySelector(".img-modal").src = '../netflix-images/' + user.url
+            document.querySelector(".img-modal").src = 'netflix-images/' + user.url
             user.favorites.map(favorite => {
                document.querySelector('.fav-modal').innerText = favorite
             })
